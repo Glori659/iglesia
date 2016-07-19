@@ -1,0 +1,201 @@
+/* css login */
+.body-login {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #eee;
+}
+.body-login >.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    width: 34%;
+    margin-left: 33%;
+}
+.alert {
+    border-radius: 2px;
+}
+.form-signin {
+  max-width: 390px;
+  padding: 50px;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 2px;
+  color: white;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+/* End css login */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+    background-color: #FFF;
+    margin-bottom: 60px;
+}
+.navbar-inverse {
+    background-color: rgb(38, 66, 103);
+    border-color: #CCC;
+}
+.navbar-inverse .navbar-brand {
+    color: #FFF;
+    border-right-style: solid;
+    border-width: 1px;
+    border-color: #48607f;
+    height: 64px;
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: #FFF;
+    padding: 22px;
+}
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:focus,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+    color: #FFF;
+    background-color: rgb(23, 76, 144);
+}
+.navbar-nav > li {
+    border-right-style: solid;
+    border-width: 1px;
+    border-color: #48607f;
+}
+.top-nav > li {
+    border-left-style: solid;
+    border-width: 1px;
+    border-color: #48607f;
+}
+.top-nav > li > a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    line-height: 20px;
+    color: #FFF;
+    padding: 22px;
+}
+.top-nav > li > a:hover,
+.top-nav > li > a:focus,
+.top-nav > .open > a,
+.top-nav > .open > a:hover,
+.top-nav > .open > a:focus {
+  color: #FFF;
+  background-color: rgb(23, 76, 144);
+}
+.container-main {
+    padding-bottom: 32px;
+}
+.btn-info:active:hover.btn-info:active, .btn-info:focus {
+    color: #fff;
+    background-color: rgb(38, 66, 103);
+    border-color: rgb(23, 76, 144);
+}
+.btn-info:hover {
+  color: #fff;
+  background-color: rgb(23, 76, 144);
+  border-color: rgb(23, 76, 144);
+  border-radius: 0px;
+}
+.btn-info {
+  color: #fff;
+  background-color: rgb(38, 66, 103);
+  border-color: rgb(23, 76, 144);
+  border-radius: 2px;
+}
+.btn-info.active.focus, 
+.btn-info.active:focus, 
+.btn-info.active:hover, 
+.btn-info.focus:active, 
+.btn-info:active:focus, 
+.btn-info:active:hover,
+.btn-info.active,
+.btn-info:active, 
+.open > .dropdown-toggle.btn-info 
+.open > .dropdown-toggle.btn-info.focus, 
+.open > .dropdown-toggle.btn-info:focus, 
+.open > .dropdown-toggle.btn-info:hover{
+    color: #fff;
+    background-color: #174c90;
+    border-color: #264267;
+}
+.dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover {
+    color: #FFF;
+    text-decoration: none;
+    background-color: #174C90;
+}
+.breadcrumb {
+    border-radius: 0px;
+}
+.pagination > .active > a,
+.pagination > .active > a:focus,
+.pagination > .active > a:hover,
+.pagination > .active > span,
+.pagination > .active > span:focus,
+.pagination > .active > span:hover {
+  background-color: rgb(38, 66, 103);
+  border-color: rgb(23, 76, 144) !important;
+}
+.label-success {
+  border-radius: 2px;
+}
+.form-control {
+  border-radius: 0px;
+}
+
+.btn-default {
+    border-radius: 2px;
+}
+.list-group-item:first-child {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    padding: 12px !important;
+}
+.list-group-item:last-child {
+    margin: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    padding: 12px !important;
+}
+.input-group-addon:first-child {
+    border-radius: 0px;
+}
+label>.text-danger {
+    color: #ff0500;
+    font-size: 13px;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #f5f5f5;
+}
+.container .text-muted {
+    margin: 20px 0;
+}

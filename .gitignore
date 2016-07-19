@@ -1,0 +1,8 @@
+/vendor
+/node_modules
+Homestead.yaml
+.env
+/storage/Client/*
+/storage/Reseller/*
+public/img/logo_aseguradoras/*
+composer.lock
