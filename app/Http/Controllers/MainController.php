@@ -19,8 +19,15 @@ class MainController extends Controller
     {
         $history = \DB::table('users')
             ->join('people', 'users.id', '=', 'people.user_id')
-            ->select('users.email','people.*')
+            ->select('users.email',
+                'people.name_last',
+                'people.name_first',
+                'people.date_birth',
+                'people.created_at',
+                'people.updated_at')
             ->get();
+            //dd($history);
+            /*
         $history1=\DB::table('users')
             ->join('candidates', 'users.id', '=', 'candidates.user_id')
             ->select('users.email','candidates.*')
@@ -34,7 +41,7 @@ class MainController extends Controller
 		}
 		foreach ($history2 as $key => $value) {
 			array_push($history, $value);
-		}
+		}*/
 		//usort($history, 'compareCreated');
 		//dd($history);
 		//array_push($history,);

@@ -32,18 +32,33 @@ Route::group(['middleware' => 'auth'],function(){
 	Route::resource('/users', 'UserController');
 	Route::get('/settings', ['as' => 'none', 'uses' => 'MainController@settings']);
 	
-	/* forms */
+	/* Child */
 	Route::get('person/child','PersonController@createChild');
+	Route::post('person/child','PersonController@storeChild');
+	Route::get('person/child/{id}/edit','PersonController@editChild');
+	Route::put('person/child/{id}/edit','PersonController@updateChild');
+	/* Adult */
 	Route::get('person/adult','PersonController@createAdult');
+	Route::post('person/adult/greater','PersonController@storeAdultGreater');
+	Route::get('person/adult/{id}/edit','PersonController@editAdult');
+	Route::put('person/adult/{id}/edit','PersonController@updateAdult');
+	/* Adult Greater */
 	Route::get('person/adult/greater','PersonController@createAdultGreater');
+	Route::post('person/adult/greater','PersonController@storeAdultGreater');
+
 	Route::resource('person','PersonController');
-	Route::resource('companies','CompanyController');
+	Route::resource('group','GroupController');
 	Route::resource('candidates', 'CandidateController');
 
 	Route::resource('configuration','ConfigurationController');
 	Route::get('/people/form', ['as' => 'none', 'uses' => 'FormController@people']);
 	//Route::get('/companies/form', ['as' => 'none', 'uses' => 'FormController@companies']);
 	//Route::get('/candidates/form', ['as' => 'none', 'uses' => 'FormController@candidates']);
+
+	Route::resource('states','StateController');
+	Route::resource('cities',			'CityController');
+	Route::resource('municipalities',	'MunicipalityController');
+	Route::resource('parishes',			'ParishController');
 
 });
 

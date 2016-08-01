@@ -8,7 +8,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Galley Financial | BlockScore</title>
+        <title>Centro Cristiano Monte Horeb | Sistema Población Cristiana</title>
 
         <!-- Bootstrap Core CSS -->
         {{ HTML::style('assets/css/bootstrap.min.css') }}
@@ -26,14 +26,7 @@
         <!--Bootstrap-datepicker-->
         {{ HTML::style('assets/bootstrap-datepicker/css/bootstrap-datepicker3.min.css') }}
 
-
         @yield('style-page')
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
     </head>
     <body>
 
@@ -48,7 +41,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="{{ url('/')}}">
-                        <img  style="height: 169%; margin-top: -12px;" class="normal" src="http://galleyfinancial.com/wp-content/uploads/2016/05/galley-financial-logo_-header.png" alt="Logo">
+                        <img  style="height: 169%; margin-top: -12px;" class="normal" src="{{ url('logo-2.png') }}" alt="Logo">
                     </a>
                 </div>
                 <!-- Top Menu Items -->
@@ -89,7 +82,7 @@
             <div class="container text-center">
                 <p class="text-muted">
                     Desarrollado por 
-                    <a href="http://zuliatec.com/">
+                    <a href="http://glori.com.ve/">
                     Glorienllys Delgadillo 
                     </a>
                 </p>

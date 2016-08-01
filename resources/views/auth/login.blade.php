@@ -18,12 +18,12 @@
         {{ HTML::style('assets/font-awesome/css/font-awesome.min.css') }}
 
     </head>
-	<body class="body-login">
+	<body class="body-login" style="background-image:url({{ url('fondo.jpg') }})">
 	    <div class="container">
 	    	@include("layout.partials.messages")
 	    	{!!Form::open(array('url' =>'auth/login','method'=>'post','class'=>'form-signin','id'=>'form-login'))!!}
-	    	<img  style="margin-top: -14px; width: 100.3%;" class="normal" src="http://galleyfinancial.com/wp-content/uploads/2016/05/galley-financial-logo_-header.png" alt="Logo">
-				<h2 class="form-signin-heading">Please sign in</h2>
+	    	<img  style="margin-top: -14px; width: 100.3%;" class="normal" src="{{ url('logo.png') }}" alt="Logo">
+				<h2 class="form-signin-heading">Inicia sesión</h2>
 
 				<label for="inputEmail" class="sr-only">
 					Email address
@@ -42,10 +42,10 @@
 				<div class="checkbox">
 					<label>
 						<input value="remember-me" type="checkbox"> 
-						Remember me
+						Recuerdame
 					</label>
 				</div>
-				<button class="btn btn-lg btn-info btn-block" type="submit">Sign in</button>
+				<button class="btn btn-lg btn-info btn-block" type="submit">Iniciar</button>
 			{!! Form::close()!!}
 
 	    </div> <!-- /container -->

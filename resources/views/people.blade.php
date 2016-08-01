@@ -13,19 +13,19 @@
       <ul class="dropdown-menu">
         <li>
             <a href="{{ url('/person/child')}}">
-                <i class="glyphicon glyphicon-user"></i> 
+                <i class="fa fa-child fa-lg"></i> 
                 Niño
             </a>
         </li>
         <li>
             <a href="{{ url('/person/adult')}}">
-                <i class="fa fa-building"></i> 
+                <i class="glyphicon glyphicon-user"></i> 
                 Adulto
             </a>
         </li>
         <li>
             <a href="{{ url('/person/adult/greater')}}">
-                <i class="fa fa-search"></i> 
+                <i class="glyphicon glyphicon-user"></i> 
                 Adulto Mayor
             </a>
         </li>
@@ -42,7 +42,9 @@
                         <th>Nombres</th>
                         <th>Apellidos</th>
                         <th>Cedula</th>
-                        <th>Estatus</th>
+                        <th>Edad</th>
+                        <th>Genero</th>
+                        <th>Opciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -50,13 +52,48 @@
                         <tr>
                             <td class="text-center"><a href="{{url('/person')}}/{{$data->id}}">{!!$data->id !!}</td>
                             <td>
-                                {!! json_decode($data->json)->name_first  !!}
+                                {!!$data->name_first!!}
                             </td>
                             <td>
-                                {!! json_decode($data->json)->name_last  !!}
+                                {!!$data->name_last!!}
                             </td>
-                            <td>{!!$data->created_at->diffForHumans()!!}</td>
-                            <td>{!!$data->user->email!!}</td>
+                            <td>
+                            @if($data->identity_document=='')
+                                <span class="label label-warning">
+                                    No posee cedula
+                                </span>
+                            @else
+                                {!!$data->identity_document!!}
+                            @endif
+                            </td>
+                            <td>
+                                {!!$data->age($data->date_birth)->value!!}
+                                ({!!$data->age($data->date_birth)->categorie!!})
+                            </td>
+                            <td>
+                                {!!$data->gender!!}
+                            </td>
+                            <td class="text-center">
+                            @if(isset(json_decode($data->json)->deleted))
+                                @if(json_decode($data->json)->deleted==true)
+                                
+                                @endif
+                                @else
+                                {{ Form::open(array('url' => 'candidates/' . $data->id)) }}
+                                    <div class="btn-group" role="group" aria-label="...">
+                                        {{ Form::hidden('_method', 'DELETE') }}
+                                        <a href="{{url('person/adult/')}}/{{$data->id}}/edit" type="button" class="btn btn-default">
+                                            <i class="fa fa-pencil"></i> 
+                                            Edit
+                                        </a>
+                                        <button type="submit" class="btn btn-default">
+                                            <i class="fa fa-trash"></i> 
+                                            Delete
+                                        </button>
+                                    </div>                                
+                                {{ Form::close() }}
+                            @endif
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>

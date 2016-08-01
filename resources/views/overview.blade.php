@@ -54,22 +54,22 @@
             <table class="table table-striped table-bordered table-hover" id="history">
                 <thead>
                     <tr>
-                        <th>Operation</th>
-                        <th>Carried out by</th>
-                        <th>Executed on the date</th>
+                        <th>Operación</th>
+                        <th>Llevado a cabo por</th>
+                        <th>Ejecutado en la fecha</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ( $history as $data)
                         <tr>
                             <td>
-                               Creation of {!! json_decode($data->json)->object!!} 
-                               @if(isset(json_decode($data->json)->name_first))
-                                    {!!json_decode($data->json)->name_first!!} 
-                                    {!!json_decode($data->json)->name_last!!}
+                               Creación de  
+                               @if(isset($data->name_first))
+                                    {!!$data->name_first!!} 
+                                    {!!$data->name_last!!}
                                @endif
-                               @if(isset(json_decode($data->json)->entity_name))
-                                    {!!json_decode($data->json)->entity_name!!}
+                               @if(isset($data->entity_name))
+                                    {!!$data->entity_name!!}
                                @endif
                             </td>
                             <td>{!!$data->email!!} </td>

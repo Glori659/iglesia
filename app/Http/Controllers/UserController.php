@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\User;
-use App\Configuration;
 
 class UserController extends Controller
 {
@@ -39,8 +38,7 @@ class UserController extends Controller
          }else{
             $user  =    User::find(\Auth::user()->id);
          }
-        $confi =    Configuration::find(1);
-    	return view('settings',compact('user','confi'));
+    	return view('settings',compact('user'));
     }
     public function update(Request $request, $id){
         $rules = array(

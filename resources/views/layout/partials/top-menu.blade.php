@@ -7,10 +7,7 @@
 			<a href="{{ url('person')}}">Personas</a>
 		</li>
 		<li>
-			<a href="{{ url('companies')}}">Departamento</a>
-		</li>
-		<li>
-			<a href="{{ url('candidates')}}">Candidates</a>
+			<a href="{{ url('group')}}">Grupos</a>
 		</li>
 		@if(Auth::user()->type=='ADMIN')
 		<li>
@@ -28,9 +25,6 @@
 		        <ul class="dropdown-menu">
 		            <li>
 		                <a href="{{url('users')}}/{{ Auth::user()->id }}"><i class="fa fa-fw fa-gear"></i> Settings</a>
-		            </li>
-		            <li>
-		                <a href="{{url('configuration')}}"><i class="fa fa-key fa-gear"></i> System key</a>
 		            </li>
 		            <li class="divider"></li>
 		            <li>

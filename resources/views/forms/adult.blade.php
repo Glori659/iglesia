@@ -1,4 +1,7 @@
 @extends('layout.main')
+@section('style-page')
+{{ HTML::style('assets/js/plugins/select2/select2.css') }}
+@stop
 @section('tittle')
     Registrar Adulto
 @stop
@@ -13,4 +16,14 @@
     </ol>
 @stop
 @section('content')
+    {!! Form::open(array('url'=>'person/adult','method'=>'POST','id'=>'add-person'))!!}
+        @include('forms.fields')
+        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+            <button type="submit" class="btn btn-default">Submit </button>
+            <button type="reset" class="btn btn-default">Reset </button>
+        </div>
+    {!! Form::close() !!}
+@stop
+@section('script-page')
+    @include('forms.scripts')
 @stop
