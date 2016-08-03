@@ -39,7 +39,7 @@ Route::group(['middleware' => 'auth'],function(){
 	Route::put('person/child/{id}/edit','PersonController@updateChild');
 	/* Adult */
 	Route::get('person/adult','PersonController@createAdult');
-	Route::post('person/adult/greater','PersonController@storeAdultGreater');
+	Route::post('person/adult','PersonController@storeAdult');
 	Route::get('person/adult/{id}/edit','PersonController@editAdult');
 	Route::put('person/adult/{id}/edit','PersonController@updateAdult');
 	/* Adult Greater */

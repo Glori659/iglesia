@@ -1,5 +1,4 @@
 <?php
-
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
@@ -87,8 +86,7 @@ class Person extends Model
     static function age($date){
         date_default_timezone_set('UTC');
         $value  = explode("-", $date, 3);
-        $fecha2 = time();
-        $value  = mktime(0,0,0,$value[1],$value[2],$value[0]);;
+        $value  = mktime(0,0,0,$value[1],$value[2],$value[0]);
         $age    = (int)((time()-$value)/31556926 );
         $resul['value'] = $age;
         if($age>=15 && $age<=54 ){

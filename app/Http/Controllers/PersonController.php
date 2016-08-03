@@ -59,18 +59,6 @@ class PersonController extends Controller
         }
         public function storeChild(Request $request)
         {
-            $age=Person::age($request['date_birth']);
-            if($age->categorie=='Adulto'){
-                return \Redirect::back()
-                ->with('danger',
-                'La persona que intenta registrar es un Adulto de '.$age->value.' años')
-                ->withInput();
-            }elseif($age->categorie=='Adulto Mayor'){
-                return \Redirect::back()
-                ->with('danger',
-                'La persona que intenta registrar es un Adulto Mayor, cuya edad es de '.$age->value.' años')
-                ->withInput();
-            }
             $rules = array(
                 'core'              => 'required',
                 'representative_id' => 'required',
@@ -85,6 +73,18 @@ class PersonController extends Controller
                 'question'          => 'min:3'
             );
             $this->validate($request,$rules);
+            $age=Person::age($request['date_birth']);
+            if($age->categorie=='Adulto'){
+                return \Redirect::back()
+                ->with('danger',
+                'La persona que intenta registrar es un Adulto de '.$age->value.' años')
+                ->withInput();
+            }elseif($age->categorie=='Adulto Mayor'){
+                return \Redirect::back()
+                ->with('danger',
+                'La persona que intenta registrar es un Adulto Mayor, cuya edad es de '.$age->value.' años')
+                ->withInput();
+            }
             $request['user_id']=\Auth::user()->id;
             $person= Person::create($request->all());
             $person->core()->attach($request['core']);
@@ -122,18 +122,6 @@ class PersonController extends Controller
         }
         public function storeAdult(Request $request)
         {
-            $age=Person::age($request['date_birth']);
-            if ($age->categorie=='Niño') {
-                return \Redirect::back()
-                ->with('danger',
-                'La persona que intenta registrar es un niño de '.$age->value.' años')
-                ->withInput();
-            }elseif($age->categorie=='Adulto Mayor'){
-                return \Redirect::back()
-                ->with('danger',
-                'La persona que intenta registrar es un Adulto Mayor, cuya edad es de '.$age->value.' años')
-                ->withInput();
-            }
             //dd($request->all());
             $rules = array(
                 'core'              => 'required',
@@ -149,6 +137,18 @@ class PersonController extends Controller
                 'question'          => 'min:3'
             );
             $this->validate($request,$rules);
+            $age=Person::age($request['date_birth']);
+            if ($age->categorie=='Niño') {
+                return \Redirect::back()
+                ->with('danger',
+                'La persona que intenta registrar es un niño de '.$age->value.' años')
+                ->withInput();
+            }elseif($age->categorie=='Adulto Mayor'){
+                return \Redirect::back()
+                ->with('danger',
+                'La persona que intenta registrar es un Adulto Mayor, cuya edad es de '.$age->value.' años')
+                ->withInput();
+            }
             $request['user_id']=\Auth::user()->id;
             $person= Person::create($request->all());
             $person->core()->attach($request['core']);
@@ -226,20 +226,6 @@ class PersonController extends Controller
         }
         public function storeAdultGreater(Request $request)
         {
-            $age=Person::age($request['date_birth']);
-            if ($age->categorie=='Niño') {
-                return Redirect::back()
-                ->with('danger',
-                'La persona que intenta registrar es un niño de '.$age->value.' años')
-                ->withInput();
-                //dd("es un niño ".$age);
-            }elseif($age->categorie=='Adulto'){
-                return Redirect::back()
-                ->with('danger',
-                'La persona que intenta registrar es un Adulto de '.$age->value.' años')
-                ->withInput();
-                dd("es un adulto ".$age);
-            }
 
             $rules = array(
                 'core'              => 'required',
@@ -255,6 +241,20 @@ class PersonController extends Controller
                 'question'          => 'min:3'
             );
             $this->validate($request,$rules);
+            $age=Person::age($request['date_birth']);
+            if ($age->categorie=='Niño') {
+                return Redirect::back()
+                ->with('danger',
+                'La persona que intenta registrar es un niño de '.$age->value.' años')
+                ->withInput();
+                //dd("es un niño ".$age);
+            }elseif($age->categorie=='Adulto'){
+                return Redirect::back()
+                ->with('danger',
+                'La persona que intenta registrar es un Adulto de '.$age->value.' años')
+                ->withInput();
+                dd("es un adulto ".$age);
+            }
             $request['user_id']=\Auth::user()->id;
             $person= Person::create($request->all());
             $person->core()->attach($request['core']);
