@@ -39,11 +39,11 @@
                                         {{ Form::hidden('_method', 'DELETE') }}
                                         <a href="{{url('group/')}}/{{$data->id}}/edit" type="button" class="btn btn-default">
                                             <i class="fa fa-pencil"></i> 
-                                            Edit
+                                            Editar
                                         </a>
                                         <button type="submit" class="btn btn-default">
                                             <i class="fa fa-trash"></i> 
-                                            Delete
+                                            Borrar
                                         </button>
                                     </div>                                
                                 {{ Form::close() }}

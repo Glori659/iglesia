@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>Blockscore-Zuliatec</title>
+        <title>Centro Cristiano Monte Horeb</title>
 
         <!-- Bootstrap Core CSS -->
         {{ HTML::style('assets/css/bootstrap.min.css') }}
@@ -26,14 +26,14 @@
 				<h2 class="form-signin-heading">Inicia sesión</h2>
 
 				<label for="inputEmail" class="sr-only">
-					Email address
+					Correo Electronico
 				</label>
 
 				<input id="inputEmail" name="email" class="form-control" placeholder="Email address"
 				requireds="" autofocus="" type="email">
 
 				<label for="inputPassword" class="sr-only">
-					Password
+					Contraseña
 				</label>
 
 				<input id="inputPassword" name="password" class="form-control" placeholder="Password"

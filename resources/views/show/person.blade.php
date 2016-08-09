@@ -40,7 +40,7 @@
                             <td>{{$person->name_first}}</td>
                         </tr>
                         <tr>
-                            <td>Apellido</td>
+                            <td>Apellidos</td>
                             <td>{{$person->name_last}}</td>
                         </tr>
                         <tr>
@@ -48,7 +48,7 @@
                             <td>{{$person->nationality}}</td>
                         </tr>
                         <tr>
-                            <td>Numero de documento o Cedula</td>
+                            <td>Documento de Identidad</td>
                             <td>{{$person->identity_document}}</td>
                         </tr>
                         <tr>
@@ -87,7 +87,7 @@
             </div>
             @endif
             <h3>
-                Nucleos a los que pertenece
+                Nucleos a los que Pertenece
                 <i class="fa fa-bullseye" aria-hidden="true"></i>
             </h3>
             <div class="table-responsive">
@@ -106,7 +106,7 @@
             </div>
             <div class="col-lg-6">
             <h3>
-                Representate
+                Representante
                 <i class="glyphicon glyphicon-user" aria-hidden="true"></i>
             </h3>
             <div class="table-responsive">
@@ -161,7 +161,7 @@
                 <table class="table table-hover table-striped">
                     <tbody>
                         <tr>
-                            <td>observaciones</td>
+                            <td>Observaciones</td>
                             <td>{{$person->observations}}</td>
                         </tr>
                         <tr>
@@ -169,7 +169,7 @@
                             <td>{{$person->qualities}}</td>
                         </tr>
                         <tr>
-                            <td>Actividades que desea realizar</td>
+                            <td>Actividades que Desea Realizar</td>
                             <td>{{$person->question}}</td>
                         </tr>
                     </tbody>

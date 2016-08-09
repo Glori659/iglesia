@@ -19,8 +19,8 @@
     {!! Form::open(array('url'=>'person/child','method'=>'POST','id'=>'add-person'))!!}
         @include('forms.fields')
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <button type="submit" class="btn btn-default">Submit </button>
-            <button type="reset" class="btn btn-default">Reset </button>
+            <button type="submit" class="btn btn-default">Guardar </button>
+            <button type="reset" class="btn btn-default">Volver </button>
         </div>
     {!! Form::close() !!}
 @stop

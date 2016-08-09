@@ -19,8 +19,8 @@
     {!! Form::model($person,array('url'=>'person/adult/'.$person->id.'/edit','method'=>'PUT','id'=>'add-person','class'=>'form-horizontal'))!!}
         @include('forms.fields')
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <button type="submit" class="btn btn-default">Submit </button>
-            <button type="reset" class="btn btn-default">Reset </button>
+            <button type="submit" class="btn btn-default">Guardar </button>
+            <button type="reset" class="btn btn-default">Volver </button>
         </div>
     {!! Form::close() !!}
 @stop

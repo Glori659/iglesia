@@ -60,7 +60,7 @@
                             <td>
                             @if($data->identity_document=='')
                                 <span class="label label-warning">
-                                    No posee cedula
+                                    No Posee Cedula
                                 </span>
                             @else
                                 {!!$data->identity_document!!}
@@ -84,11 +84,11 @@
                                         {{ Form::hidden('_method', 'DELETE') }}
                                         <a href="{{url('person/adult/')}}/{{$data->id}}/edit" type="button" class="btn btn-default">
                                             <i class="fa fa-pencil"></i> 
-                                            Edit
+                                            Editar
                                         </a>
                                         <button type="submit" class="btn btn-default">
                                             <i class="fa fa-trash"></i> 
-                                            Delete
+                                            Borrar
                                         </button>
                                     </div>                                
                                 {{ Form::close() }}

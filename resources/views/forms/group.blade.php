@@ -20,7 +20,7 @@
         <div class=" col-sm-8 col-lg-6 col-md-6 col-md-offset-3 col-sm-offset-2">
             <div class="form-group">
                 <label>Nombre del Grupo <span class="text-danger">*</span></label>
-                {!! Form::text('name',null,array('id'=>'first_name','class'=>'form-control','placeholder'=>'Ingrese el nombre del grupo'))!!}
+                {!! Form::text('name',null,array('id'=>'first_name','class'=>'form-control','placeholder'=>'Ingrese el Nombre del Grupo'))!!}
             </div>
             <div class="form-group">
                 <label>Tipo de Grupo</label>
@@ -31,7 +31,7 @@
                         ,null,array(
                         'id'=>'document_type',
                         'class'=>'form-control',
-                        'data-placeholder'=>'Nacionalidad'
+                        'data-placeholder'=>'Tipo'
                         ,'style'=>'width: 100%;'))
                     !!}
             </div>
@@ -42,7 +42,7 @@
                         ,null,array(
                         'id'=>'document_type',
                         'class'=>'select-select2',
-                        'data-placeholder'=>'Nacionalidad'
+                        'data-placeholder'=>'Lider del Grupo'
                         ,'style'=>'width: 100%;'))
                     !!}
             </div>
@@ -52,8 +52,8 @@
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <button type="submit" class="btn btn-default">Submit </button>
-            <button type="reset" class="btn btn-default">Reset </button>
+            <button type="submit" class="btn btn-default">Guardar </button>
+            <button type="reset" class="btn btn-default">Volver </button>
         </div>
     {!! Form::close() !!}
 @stop

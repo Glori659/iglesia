@@ -3,10 +3,10 @@
     @include('Data-Table.css')
 @stop
 @section('tittle')
-    List of users 
+    Lista de Usuarios
     <small class='pull-right'>
         <a href="{{ url('users/create') }}" class="btn btn-lg  btn-info">
-            Add user 
+            Crear un Usuario 
         </a> 
     </small>                               
 @stop
@@ -17,11 +17,11 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Email</th>
-                    <th>Type</th>
-                    <th>Status</th>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                    <th>Correo</th>
+                    <th>Tipo</th>
+                    <th>Estatus</th>
                 </tr>
             </thead>
             <tbody>

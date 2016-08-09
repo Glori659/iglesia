@@ -1,6 +1,6 @@
 @extends('layout.main')
 @section('tittle')
-    Información del grupo
+    Información del Grupo
 @stop
 @section('breadcrumb')
     <ol class="breadcrumb">
@@ -58,14 +58,14 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Cedula </td>
+                            <td>Documento de Identidad </td>
                             <td>{{$group->leader->identity_document}}</td>
                         </tr>
                     @else
                         <tr>
                             <td>
                             <i class="fa fa-exclamation-triangle text-warning" aria-hidden="true"></i>
-                                No pose lider asignado este {!!$group->type !!}
+                                No Posee Lider Asignado  {!!$group->type !!}
                             </td>
                         </tr>
                     @endif

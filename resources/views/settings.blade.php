@@ -1,6 +1,6 @@
 @extends('layout.main')
 @section('tittle')
-	User Settings
+	Configuracion de Usuario
 @stop
 @section('content')
     <div class="col-lg-4 text-center">
@@ -9,7 +9,7 @@
                 <small>{{$user->type}}</small>
             </h3>
             <p>
-            	Here you can see the basic information of the user and to modify user data, simply use the form that appears on the right
+            	Aquí se pueden Modificar las Configuraciones de Usuario.
 	            <i class="fa fa-arrow-right" aria-hidden="true"></i>
 			</p>
     </div>
@@ -25,42 +25,42 @@
     	@endif
     	{{ Form::model($user, array('url' => array('users', $user->id), 'method'=>'PUT'))}}
        		<div class="form-group">
-                <label>personal data</label>
-                {!! Form::text('first_name',null,array('id'=>'first_name','class'=>'form-control','placeholder'=>'Enter first name'))!!}
+                <label>Informacion Personal</label>
+                {!! Form::text('first_name',null,array('id'=>'first_name','class'=>'form-control','placeholder'=>'Ingrese Su Nombre'))!!}
             </div>
 
             <div class="form-group">
-            	{!! Form::text('last_name',null,array('id'=>'last_name','class'=>'form-control','placeholder'=>'Enter last name'))!!}
+            	{!! Form::text('last_name',null,array('id'=>'last_name','class'=>'form-control','placeholder'=>'Ingrese Su Apellido'))!!}
             </div>
 
             <div class="form-group">
-                <label>Your Account</label>
-                {!! Form::text('email',null,array('id'=>'last_name','class'=>'form-control','placeholder'=>'Enter new email'))!!}
-                <p class="help-block">Note: the email address will be used for login or reset your password</p>
+                <label>Cuenta</label>
+                {!! Form::text('email',null,array('id'=>'last_name','class'=>'form-control','placeholder'=>'Ingrese Su Correo Electronico'))!!}
+                <p class="help-block">Nota: El correo Electronico se utilizará para iniciar la sesión o restablecer su contraseña</p>
             </div>
 
             <div class="form-group">
-                <label>Change your password</label>
-                {!! Form::password('current_password',array('id'=>'current_password','class'=>'form-control','placeholder'=>'Current password'))!!}
+                <label>Cambiar su Contraseña</label>
+                {!! Form::password('current_password',array('id'=>'current_password','class'=>'form-control','placeholder'=>'Contraseña Actual'))!!}
             </div>
             <div class="form-group">
-                {!! Form::password('password',array('id'=>'password','class'=>'form-control','placeholder'=>'New your password'))!!}
+                {!! Form::password('password',array('id'=>'password','class'=>'form-control','placeholder'=>'Ingrese su Nueva Contraseña'))!!}
             </div>
             <div class="form-group">
-                {!! Form::password('password_confirmation',array('id'=>'password_confirmation','class'=>'form-control','placeholder'=>'Confirm your password'))!!}
+                {!! Form::password('password_confirmation',array('id'=>'password_confirmation','class'=>'form-control','placeholder'=>'Confirme su Nueva Contraseña'))!!}
             </div>
             @if(Auth::user()->type=='ADMIN' && Auth::user()->id!=$user->id)
                 <div class="form-group">
-                    <label>Select the type of user</label>
+                    <label>Seleccione el Tipo de Usuario</label>
                     {{ Form::select('type', ['DEFAULT'=>'DEFAULT','ADMIN'=>'ADMIN'], [$user->type=>$user->type],['class'=>'form-control']) }}
                 </div>
                 <div class="form-group">
-                    <label>Select the status of the user</label>
+                    <label>Seleccione el Estatus del Usuario</label>
                     {{ Form::select('status', [1=>'ENABLED',0=>'DISABLED'], [$user->status=>$user->status],['class'=>'form-control']) }}
                 </div>
             @endif
 
-            <button type="submit" class="btn btn-default">Update User</button>
+            <button type="submit" class="btn btn-default">Guardar Cambios</button>
         </form>
     </div>
 @stop

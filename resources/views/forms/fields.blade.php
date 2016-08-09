@@ -7,7 +7,7 @@
         	$select['core_id'],
             array('id'=>'core',
             'class'=>'select-select2',
-            'data-placeholder'=>'Seleccione el nucleo al que pertenecera...',
+            'data-placeholder'=>'Seleccione el Nucleo al que Pertenece',
             'style'=>'width: 100%;', ))
         !!}
     </div>
@@ -15,7 +15,7 @@
     <div class="form-group">
         <label>Seleccione Representante <span class="text-danger">*</span></label>
         {!!Form::select('representative_id',$representatives,
-        		null,array('id'=>'representative_id','class'=>'select-select2','data-placeholder'=>'Seleccione el representante...','style'=>'width: 100%;', ))!!}
+        		null,array('id'=>'representative_id','class'=>'select-select2','data-placeholder'=>'Seleccione el Representante','style'=>'width: 100%;', ))!!}
     </div>
     <div class="form-group">
         <label>Parentesco con el Representante <span class="text-danger">*</span></label>
@@ -29,7 +29,7 @@
     		null,
             array('id'=>'type_relationship',
             'class'=>'select-select2',
-            'data-placeholder'=>'Seleccione el parentesco...',
+            'data-placeholder'=>'Seleccione el Parentesco',
             'style'=>'width: 100%;'))
         !!}
     </div>
@@ -41,21 +41,21 @@
 		<label class="radio-inline"><input type="radio" name="status" value="No">No</label>
     </div>
     <div class="form-group">
-        <label>Fecha de su bautizo <span class="text-danger">*</span></label>
-        {!! Form::text('date_baptisms',null,array('id'=>'date_baptisms','class'=>'datepicker form-control','placeholder'=>'Seleccione la fecha del bautizo'))!!}
+        <label>Fecha de Bautizo <span class="text-danger">*</span></label>
+        {!! Form::text('date_baptisms',null,array('id'=>'date_baptisms','class'=>'datepicker form-control','placeholder'=>'Seleccione la Fecha del Bautizo'))!!}
     </div>
     @endif
     <div class="form-group">
         <label>Nombres <span class="text-danger">*</span></label>
-        {!! Form::text('name_first',null,array('id'=>'first_name','class'=>'form-control','placeholder'=>'Ingrese los nombres'))!!}
+        {!! Form::text('name_first',null,array('id'=>'first_name','class'=>'form-control','placeholder'=>'Ingrese los Nombres'))!!}
     </div>
     <div class="form-group">
         <label>Apellidos <span class="text-danger">*</span></label>
-        {!! Form::text('name_last',null,array('id'=>'last_name','class'=>'form-control','placeholder'=>'Ingrese los apellidos'))!!}
+        {!! Form::text('name_last',null,array('id'=>'last_name','class'=>'form-control','placeholder'=>'Ingrese los Apellidos'))!!}
     </div>
     <div class="form-group">
         <label>Fecha de Nacimiento <span class="text-danger">*</span></label>
-        {!! Form::text('date_birth',null,array('id'=>'date_birth','class'=>'datepicker form-control','placeholder'=>'Seleccione la fecha de nacimiento'))!!}
+        {!! Form::text('date_birth',null,array('id'=>'date_birth','class'=>'datepicker form-control','placeholder'=>'Seleccione la Fecha de Nacimiento'))!!}
     </div>
     <div class="form-group">
         <label>Genero <span class="text-danger">*</span></label>
@@ -81,7 +81,7 @@
     		$select['type_phone'],
             array('id'=>'representative_id',
             'class'=>'select-select2',
-            'data-placeholder'=>'Seleccione el tipo de telefono...',
+            'data-placeholder'=>'Seleccione el Tipo de Telefono',
             'style'=>'width: 100%;'))
         !!}
     </div>
@@ -91,7 +91,7 @@
             $select['number'],
             array('id'=>'last_name',
             'class'=>'form-control',
-            'placeholder'=>'Ingrese el numero telefonico...'))
+            'placeholder'=>'Ingrese su Numero Telefonico'))
         !!}
     </div>
     <div class="form-group">
@@ -100,7 +100,7 @@
             null,
             array('id'=>'last_name',
             'class'=>'form-control',
-            'placeholder'=>'Ingrese el correo electrónico'))
+            'placeholder'=>'Ingrese el Correo Electrónico'))
         !!}
     </div>
     <div class="form-group">
@@ -110,7 +110,7 @@
     		$select['representative_id'],
             array('id'=>'representative_id',
             'class'=>'select-select2',
-            'data-placeholder'=>'Seleccione la profesión...',
+            'data-placeholder'=>'Seleccione la Profesión',
             'style'=>'width: 100%;', ))
         !!}
     </div>
@@ -133,7 +133,7 @@
             $select['state_id'],
             array('id'=>'state_id',
             'class'=>'form-control select-select2',
-            'data-placeholder'=>'Selecciona un estado...',
+            'data-placeholder'=>'Selecciona un Estado',
             'style'=>'width: 100%;',
             $disabled=>''))
         !!}
@@ -148,7 +148,7 @@
             $select['city_id'],
             array('id'=>'city_id',
             'class'=>'form-control select-select2',
-            'data-placeholder'=>'Selecciona un ciudad...',
+            'data-placeholder'=>'Selecciona una Ciudad',
             'style'=>'width: 100%;',
             $disabled=>''))
         !!}
@@ -163,7 +163,7 @@
             $select['municipality_id'],
             array('id'=>'municipality_id',
             'class'=>'form-control select-select2',
-            'data-placeholder'=>'Selecciona un municipio...',
+            'data-placeholder'=>'Selecciona un Municipio',
             'style'=>'width: 100%;',
             $disabled=>''))!!}
     </div>
@@ -177,7 +177,7 @@
             $select['parish_id'],
             array('id'=>'parish_id',
             'class'=>'form-control select-select2',
-            'data-placeholder'=>'Selecciona un parroquía...',
+            'data-placeholder'=>'Selecciona un Parroquía',
             'style'=>'width: 100%;',
             $disabled=>''))
         !!}
@@ -191,7 +191,7 @@
             $select['type_address'],
             array('id'=>'type_address',
             'class'=>'form-control select-select2',
-            'data-placeholder'=>'Selecciona un tipo de dirección...',
+            'data-placeholder'=>'Seleccione un Tipo de Dirección',
             'style'=>'width: 100%;',
             $disabled=>''))
         !!}
@@ -204,7 +204,7 @@
             $select['address'],
             array('id'=>'address',
             'class'=>'form-control',
-            'placeholder'=>'Ingrese la dirección...',
+            'placeholder'=>'Ingrese la Dirección.',
             'style'=>'width: 100%;',
             $disabled=>'',
             'for'=>'address'))
@@ -227,7 +227,7 @@
     </div>
     <div class='form-group'>
         <label>Documento de Identidad <span class="text-danger">*</span></label>
-        {!! Form::text('identity_document',null,array('id'=>'identity_document','class'=>'form-control','placeholder'=>'Ingrese su numero de identidad','for'=>'identity_document'))!!}
+        {!! Form::text('identity_document',null,array('id'=>'identity_document','class'=>'form-control','placeholder'=>'Ingrese su Numero de Identidad','for'=>'identity_document'))!!}
     </div>
     <div class="form-group">
         <label>Observaciones</label>

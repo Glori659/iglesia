@@ -2,49 +2,7 @@
 @section('style-page')
     @include('Data-Table.css')
 @stop
-@section('tittle')
-    Overview
-@stop
 @section('btn-header')
-<!--<div class="btn-group pull-right" role="group" aria-label="...">
-    <a href="{{ url('/person/create')}}" class="btn btn-lg  btn-info "  style="text-align: right;">
-        <i class="glyphicon glyphicon-user pull-left"></i>
-            Verify a person
-    </a>
-    <a href="{{ url('/companies/create')}}" class="btn btn-lg  btn-info "  style="text-align: right;">
-        <i class="fa fa-building pull-left"></i>
-            Verify a company
-    </a>
-    <a href="{{ url('/candidates/create')}}" class="btn btn-lg  btn-info"  style="text-align: right;">
-        <i class="fa fa-search pull-left"></i>
-            Create a candidate
-    </a>
-</div>-->
-<div class="btn-group pull-right">
-  <button type="button" class="btn btn-lg btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Options <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu">
-    <li>
-        <a href="{{ url('/person/create')}}">
-            <i class="glyphicon glyphicon-user"></i> 
-            Verify a person
-        </a>
-    </li>
-    <li>
-        <a href="{{ url('/companies/create')}}">
-            <i class="fa fa-building"></i> 
-            Verify a company
-        </a>
-    </li>
-    <li>
-        <a href="{{ url('/candidates/create')}}">
-            <i class="fa fa-search"></i> 
-            Create a candidate
-        </a>
-    </li>
-  </ul>
-</div>
 @stop
 @section('breadcrumb')
 @stop

@@ -1,6 +1,6 @@
 @extends('layout.main')
 @section('tittle')
-    Create a new candidate
+    Crear una nueva Persona
 @stop
 @section('breadcrumb')
     <ol class="breadcrumb">
@@ -16,20 +16,20 @@
     {!! Form::open(array('url'=>'candidates','method'=>'POST','id'=>'add-candidate'))!!}
         <div class=" col-sm-8 col-lg-6 col-md-6 col-md-offset-3 col-sm-offset-2">
             <div class="form-group">
-                <label>First name <span class="text-danger">*</span></label>
-                {!! Form::text('name_first',null,array('id'=>'first_name','class'=>'form-control','placeholder'=>'Enter first name'))!!}
+                <label>Nombres <span class="text-danger">*</span></label>
+                {!! Form::text('name_first',null,array('id'=>'first_name','class'=>'form-control','placeholder'=>'Introduzca sus Nombres'))!!}
             </div>
 
             <div class="form-group">
-                <label>Last name <span class="text-danger">*</span></label>
-                {!! Form::text('name_last',null,array('id'=>'last_name','class'=>'form-control','placeholder'=>'Enter last name'))!!}
+                <label>Apellidos <span class="text-danger">*</span></label>
+                {!! Form::text('name_last',null,array('id'=>'last_name','class'=>'form-control','placeholder'=>'Introduzca sus Apellidos'))!!}
             </div>
             <div class="form-group">
-                <label>Date of birth <span class="text-danger">*</span></label>
-                {!! Form::text('date_of_birth',null,array('id'=>'date_of_birth','class'=>'form-control','placeholder'=>'Enter date of birth'))!!}
+                <label>Fecha de Cumpleaños <span class="text-danger">*</span></label>
+                {!! Form::text('date_of_birth',null,array('id'=>'date_of_birth','class'=>'form-control','placeholder'=>'Introduzca su Fecha de Nacimiento'))!!}
             </div>
             <div class="form-group">
-                <label>Address <span class="text-danger">*</span></label>
+                <label>Pais <span class="text-danger">*</span></label>
                 <select name=" address_country_code" id="person_address_country_code" class="form-control">
                     <option value="US">United States of America</option>
                     <option value="CA">Canada</option>
@@ -243,27 +243,27 @@
                 </select>
             </div>
             <div class="form-group">
-                <label>Street <span class="text-danger">*</span></label>
-                {!! Form::text('address_street1',null,array('id'=>'address_street1','class'=>'form-control','placeholder'=>'Enter street'))!!}
+                <label>Calle <span class="text-danger">*</span></label>
+                {!! Form::text('address_street1',null,array('id'=>'address_street1','class'=>'form-control','placeholder'=>'Introduzca las Calles o Avenidas'))!!}
             </div>
             <div class="form-group">
-                <label>Street cont'd </label>
-                {!! Form::text('address_street2',null,array('id'=>'address_street2','class'=>'form-control','placeholder'=>"Enter street cont'd"))!!}
+                <label>Adicional </label>
+                {!! Form::text('address_street2',null,array('id'=>'address_street2','class'=>'form-control','placeholder'=>"Introduzca las Calles o Avenidas))!!}
             </div>
             <div class="form-group">
-                <label>Postal code <span class="text-danger">*</span></label>
-                {!! Form::text('address_postal_code',null,array('id'=>'address_postal_code','class'=>'form-control','placeholder'=>"Enter the postal code"))!!}
+                <label>Codigo Postal <span class="text-danger">*</span></label>
+                {!! Form::text('address_postal_code',null,array('id'=>'address_postal_code','class'=>'form-control','placeholder'=>"Introduzca su Codigo Postal"))!!}
             </div>
             <div class="form-group">
-                <label>City <span class="text-danger">*</span></label>
-                {!! Form::text('address_city',null,array('id'=>'address_city','class'=>'form-control','placeholder'=>"Enter city"))!!}
+                <label>Ciudad <span class="text-danger">*</span></label>
+                {!! Form::text('address_city',null,array('id'=>'address_city','class'=>'form-control','placeholder'=>"Introduzca la Ciudad"))!!}
             </div>
             <div class="form-group">
-                <label>State <span class="text-danger">*</span></label>
-                {!! Form::text('address_subdivision',null,array('id'=>'address_subdivision','class'=>'form-control','placeholder'=>"Enter state"))!!}
+                <label>Estado <span class="text-danger">*</span></label>
+                {!! Form::text('address_subdivision',null,array('id'=>'address_subdivision','class'=>'form-control','placeholder'=>"Introduzca el Estado"))!!}
             </div>
             <div class='form-group'>
-                <label>Identity document <span class="text-danger">*</span></label>
+                <label>Documento de Identidad <span class="text-danger">*</span></label>
                 <div class='input-group col-md-12'>
                     {!!Form::select('document_type',[
                         null=>null,
@@ -277,17 +277,17 @@
                     !!}
                     <span class="input-group-btn" style="width: 0%;">
                     </span>
-                    {!! Form::text('document_value',null,array('id'=>'document_value','class'=>'form-control','placeholder'=>'Enter the code of the identity document','for'=>'document_value'))!!}
+                    {!! Form::text('document_value',null,array('id'=>'document_value','class'=>'form-control','placeholder'=>'Introduzca su Documento de Identidad','for'=>'document_value'))!!}
                 </div>
             </div>
             <div class="form-group">
-                <label>Note</label>
+                <label>Notas</label>
                 <textarea name="note" class="form-control" rows="3"></textarea>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <button type="submit" class="btn btn-default">Submit </button>
-            <button type="reset" class="btn btn-default">Reset </button>
+            <button type="submit" class="btn btn-default">Guardar </button>
+            <button type="reset" class="btn btn-default">Volver </button>
         </div>
     {!! Form::close() !!}
 @stop
@@ -296,7 +296,7 @@
     $(document).ready(function() {
         $('#date_of_birth').datepicker({
             autoclose: true,
-            format: "yyyy-mm-dd",
+            format: "dd-mm-yyyy",
         });
     });
     </script>

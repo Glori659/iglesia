@@ -1,7 +1,7 @@
 <div class="collapse navbar-collapse navbar-ex1-collapse">
 		<ul class="nav navbar-nav">
 		<li>
-			<a href="{{ url('/')}}/">Overview</a>
+			<a href="{{ url('/')}}/">Inicio</a>
 		</li>
 		<li>
 			<a href="{{ url('person')}}">Personas</a>
@@ -11,7 +11,7 @@
 		</li>
 		@if(Auth::user()->type=='ADMIN')
 		<li>
-			<a href="{{ url('users')}}">Users</a>
+			<a href="{{ url('users')}}">Usuarios</a>
 		</li>
 		@endif
 		</ul>
@@ -24,11 +24,11 @@
 		        </a>
 		        <ul class="dropdown-menu">
 		            <li>
-		                <a href="{{url('users')}}/{{ Auth::user()->id }}"><i class="fa fa-fw fa-gear"></i> Settings</a>
+		                <a href="{{url('users')}}/{{ Auth::user()->id }}"><i class="fa fa-fw fa-gear"></i> Configuraciones</a>
 		            </li>
 		            <li class="divider"></li>
 		            <li>
-		                <a href="{{url('auth/logout')}}"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+		                <a href="{{url('auth/logout')}}"><i class="fa fa-fw fa-power-off"></i>Salir del Sistema</a>
 		            </li>
 		        </ul>
 		    </li>
