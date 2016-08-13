@@ -68,31 +68,33 @@
                             </td>
                             <td>
                                 {!!$data->age($data->date_birth)->value!!}
-                                ({!!$data->age($data->date_birth)->categorie!!})
+                                ({!!$categorie=$data->age($data->date_birth)->categorie!!})
                             </td>
                             <td>
                                 {!!$data->gender!!}
                             </td>
                             <td class="text-center">
-                            @if(isset(json_decode($data->json)->deleted))
-                                @if(json_decode($data->json)->deleted==true)
-                                
-                                @endif
-                                @else
-                                {{ Form::open(array('url' => 'candidates/' . $data->id)) }}
+                                {{ Form::model($data,['route' => ['person.destroy',$data->id]]) }}
                                     <div class="btn-group" role="group" aria-label="...">
                                         {{ Form::hidden('_method', 'DELETE') }}
-                                        <a href="{{url('person/adult/')}}/{{$data->id}}/edit" type="button" class="btn btn-default">
-                                            <i class="fa fa-pencil"></i> 
-                                            Editar
-                                        </a>
+                                        @if($categorie=='Adulto'||$categorie=='Adulto Mayor')
+                                            <a href="{{url('person/adult/')}}/{{$data->id}}/edit" type="button" class="btn btn-default">
+                                                <i class="fa fa-pencil"></i> 
+                                                Editar
+                                            </a>
+                                        @endif
+                                        @if($categorie=='Niño')
+                                            <a href="{{url('person/child/')}}/{{$data->id}}/edit" type="button" class="btn btn-default">
+                                                <i class="fa fa-pencil"></i> 
+                                                Editar
+                                            </a>
+                                        @endif
                                         <button type="submit" class="btn btn-default">
                                             <i class="fa fa-trash"></i> 
                                             Borrar
                                         </button>
                                     </div>                                
                                 {{ Form::close() }}
-                            @endif
                             </td>
                         </tr>
                     @endforeach

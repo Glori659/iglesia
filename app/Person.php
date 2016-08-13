@@ -30,7 +30,7 @@ class Person extends Model
     }
     public function representative()
     {
-        return $this->belongsTo('App\Child','id','representative_id');
+        return $this->hasMany('App\Child','representative_id');
     }
     public function chield()
     {

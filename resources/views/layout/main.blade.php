@@ -9,6 +9,7 @@
         <meta name="author" content="">
 
         <title>Centro Cristiano Monte Horeb | Sistema </title>
+        <link rel="shortcut icon" href="{{ asset('faviconCCMH.ico?v=2')}}"/>
 
         <!-- Bootstrap Core CSS -->
         {{ HTML::style('assets/css/bootstrap.min.css') }}
@@ -81,7 +82,9 @@
         <footer class="footer">
             <div class="container text-center">
                 <p class="text-muted">
-                    Desarrollado por 
+                    Sistema Monte Horeb 2016
+                    <img  class="t" src="{{url('glori.png')}}" width="30">
+                    Developer
                     <a href="http://glori.com.ve/">
                     Glorienllys Delgadillo 
                     </a>

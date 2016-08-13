@@ -45,7 +45,6 @@ class PersonController extends Controller
             $adults=Person::categorie($categorie="Adulto Mayor");
             $countries=$this->countries;
             $cores=$this->cores;
-
             $representatives= $adultsGreater+$adults;
             $select=null;
             $disabled='disabled';
@@ -97,10 +96,39 @@ class PersonController extends Controller
             ->withInput();    
         }
         public function editChild($id){
-            dd($id);
+            $person=Person::find($id);
+            $adultsGreater=Person::categorie($categorie="Adulto");
+            $adults=Person::categorie($categorie="Adulto Mayor");
+            $countries=$this->countries;
+            $cores=$this->cores;
+            $representatives= $adultsGreater+$adults;
+            $select=$person->data_selects($person);
+            $disabled='disabled';
+            return view('forms.adult-edit',compact(
+                'countries',
+                'cores',
+                'representatives',
+                'select',
+                'disabled',
+                'person'
+            ));
         }
         public function updateChild(Request $request,$id){
-
+            $age=Person::age($request['date_birth']);
+            if ($age->categorie=='Adulto'|| $age->categorie=='Adulto Mayor') {
+                return \Redirect::back()
+                ->with('danger',
+                'La fecha de nacimiento modificada indica que la persona tiene 
+                la edad de '.$age->value.' años y para estar registrado como Niño la 
+                edad maxima es de 14 años')
+                ->withInput();
+            }else{
+                $person=Person::find($id);
+                $person->update($request->all());
+                return \Redirect::to('person/')
+                ->with('success', 'El Niño fue actualizado exitosamente')
+                ->withInput();
+            }
         }
     # End Child functions
 
@@ -129,7 +157,7 @@ class PersonController extends Controller
                 'name_last'         => 'required|min:3',
                 'date_birth'        => 'required',
                 'nationality'       => 'required',
-                'identity_document' => 'required',
+                'identity_document' => 'required|unique:people',
                 'gender'            => 'required',
                 'email'             => 'required',
                 'observations'      => 'min:3',
@@ -204,6 +232,13 @@ class PersonController extends Controller
                 edad maxima es de 54 años')
                 ->withInput();
                 //dd("es un adulto mayor ".$age);
+            }else{
+                $person=Person::find($id);
+                $person->update($request->all());
+
+                return \Redirect::to('person/')
+                ->with('success', 'El Adulto fue actualizado exitosamente')
+                ->withInput();
             }
         }
     # End Adult functions
@@ -233,7 +268,7 @@ class PersonController extends Controller
                 'name_last'         => 'required|min:3',
                 'date_birth'        => 'required',
                 'nationality'       => 'required',
-                'identity_document' => 'required',
+                'identity_document' => 'required|unique:people',
                 'gender'            => 'required',
                 'email'             => 'required',
                 'observations'      => 'min:3',
@@ -274,6 +309,24 @@ class PersonController extends Controller
             ->with('success', 'El Adulto Mayor fue registrado exitosamente')
             ->withInput();
         }
+        public function updateAdultGreater(Request $request,$id){
+            $age=Person::age($request['date_birth']);
+            if ($age->categorie=='Adulto'||$age->categorie=='Niño') {
+                return \Redirect::back()
+                ->with('danger',
+                'La fecha de nacimiento modificada indica que la persona tiene 
+                la edad de '.$age->value.' años y para estar registrado como adulto Mayor la 
+                edad minima es de 55 años')
+                ->withInput();
+            }else{
+                $person=Person::find($id);
+                $person->update($request->all());
+
+                return \Redirect::to('person/')
+                ->with('success', 'El Adulto Mayor fue actualizado exitosamente')
+                ->withInput();
+            }
+        }
     # End Adult Greater functions
     
     public function store(Request $request){
@@ -285,7 +338,7 @@ class PersonController extends Controller
             'name_last'         => 'required|min:3',
             'date_birth'        => 'required',
             'nationality'       => 'required',
-            'identity_document' => 'required',
+            'identity_document' => 'required|unique:people',
             'gender'            => 'required',
             'email'             => 'required',
             'observations'      => 'min:3',
@@ -305,5 +358,38 @@ class PersonController extends Controller
         $age=$person->age($person->date_birth);
         return view('show.person',compact('person','age'));
         dd($data);
+    }
+    public function destroy($id){
+        $person= Person::find($id);
+        $age=$person->age($person->date_birth);
+        //dd($person->representative);
+        if ($age->categorie=='Adulto' || $age->categorie=='Adulto Mayor') {
+            $aux=0;
+            foreach ($person->representative as $chield) {
+                //secho $chield->child->name_first;
+                $aux++;
+            }
+            //dd("tiene ".$aux." niños");
+            if ($aux<=0) {
+                $person->destroy($id);
+                return \Redirect::back()
+                    ->with('success',
+                    'El '.$age->categorie.' a sido eliminado exitosamente')
+                    ->withInput();
+            }else{
+                return \Redirect::back()
+                    ->with('danger',
+                    'El '.$age->categorie.' no puede ser eliminado por representar a '.$aux.' niño(s)')
+                    ->withInput();
+            }
+        }else{
+            $person->destroy($id);
+            return \Redirect::back()
+                    ->with('success',
+                    'El '.$age->categorie.' a sido eliminado exitosamente')
+                    ->withInput();
+        }
+        dd($age->categorie);
+        $person->de;
     }
 }

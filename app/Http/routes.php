@@ -45,6 +45,7 @@ Route::group(['middleware' => 'auth'],function(){
 	/* Adult Greater */
 	Route::get('person/adult/greater','PersonController@createAdultGreater');
 	Route::post('person/adult/greater','PersonController@storeAdultGreater');
+	Route::put('person/adult/greater/{id}/edit','PersonController@updateAdultGreater');
 
 	Route::resource('person','PersonController');
 	Route::resource('group','GroupController');

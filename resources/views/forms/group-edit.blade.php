@@ -54,7 +54,7 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
             <button type="submit" class="btn btn-default">Guardar </button>
-            <button type="reset" class="btn btn-default">Volver </button>
+            <a href="{{url('group') }}" type="reset" class="btn btn-default">Volver </a >
         </div>
     {!! Form::close() !!}
 @stop

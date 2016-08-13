@@ -10,5 +10,11 @@
             format: "yyyy-mm-dd"
 
         });
+        $("#status").on("click", function(){
+			$("#date_baptisms").prop('disabled', true);
+		});
+		$("#status-true").on("click", function(){
+			$("#date_baptisms").prop('disabled', false);
+		});
 </script>
 {{ HTML::script('assets/js/address.js') }}

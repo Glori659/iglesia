@@ -24,11 +24,16 @@
 		        </a>
 		        <ul class="dropdown-menu">
 		            <li>
-		                <a href="{{url('users')}}/{{ Auth::user()->id }}"><i class="fa fa-fw fa-gear"></i> Configuraciones</a>
+		                <a href="{{url('users')}}/{{ Auth::user()->id }}">
+			                <i class="fa fa-fw fa-gear"></i>Configuraciones
+		                </a>
 		            </li>
 		            <li class="divider"></li>
 		            <li>
-		                <a href="{{url('auth/logout')}}"><i class="fa fa-fw fa-power-off"></i>Salir del Sistema</a>
+		                <a href="{{url('auth/logout')}}">
+		                	<i class="fa fa-fw fa-power-off"></i>
+		                	Salir
+		                </a>
 		            </li>
 		        </ul>
 		    </li>

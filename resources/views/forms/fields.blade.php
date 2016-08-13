@@ -37,8 +37,8 @@
     <div class="form-group">
         <label>Bautizado <span class="text-danger">*</span></label>
         <br>        
-		<label class="radio-inline"><input type="radio" name="status" value="Si">Si</label>
-		<label class="radio-inline"><input type="radio" name="status" value="No">No</label>
+		<label class="radio-inline "><input class="" type="radio" name="status" id="status-true"  value="Si">Si</label>
+		<label class="radio-inline"><input type="radio" name="status" id="status" value="No">No</label>
     </div>
     <div class="form-group">
         <label>Fecha de Bautizo <span class="text-danger">*</span></label>
@@ -186,8 +186,8 @@
         <label class="control-label" for="type_address"> Tipo de Direcci&oacuten <span class="text-danger">*</span></label>
         {!!Form::select('type_address',
             [null=>null,
-            'home'=>'Casa',
-            'office'=>'Oficina'],
+            'Casa'=>'Casa',
+            'Oficina'=>'Oficina'],
             $select['type_address'],
             array('id'=>'type_address',
             'class'=>'form-control select-select2',
